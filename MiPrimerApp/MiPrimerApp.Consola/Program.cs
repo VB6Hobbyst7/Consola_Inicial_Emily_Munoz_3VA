@@ -29,7 +29,7 @@ namespace MiPrimerApp.Consola
             var animal = Console.ReadLine();
 
             Console.WriteLine("¿Estudias o Trabajas?");
-            var ocupacion = Console.ReadLine();
+            bool ocupacion = Console.ReadLine().ToUpper()=="ESTUDIO";
 
             Console.WriteLine("¿Cuál es libro favorito?");
             var libro = Console.ReadLine();
@@ -37,13 +37,25 @@ namespace MiPrimerApp.Consola
             Console.WriteLine("¿Cuál es su musica favorita?");
             var musica = Console.ReadLine();
 
-            Console.WriteLine("¿Cuál es su altura?");
-            float altura = float.Parse(Console.ReadLine());
+            Console.WriteLine("¿Cuál es su estatura?");
+            float estatura = float.Parse(Console.ReadLine());
 
             Console.WriteLine("¿Cuál es su peso?");
             float peso = float.Parse(Console.ReadLine());
 
             Console.WriteLine("Muchas gracias, /n Su informacion ha sido registrada");
+
+            var persona = new Persona();
+            persona.nombre = nombre;                
+            persona.apellido = apellido;
+            persona.edad = edad;
+            persona.colorFavorito = color;
+            persona.animalFavorito = animal;
+            persona.estudiasTrabajas = ocupacion;
+            persona.libroFavorito = libro;
+            persona.musicaFavorita = musica;
+            persona.estatura = estatura;
+            persona.peso = peso;
 
             if (args.Length > 0)
                 Console.WriteLine("Hola " + args[0]);
