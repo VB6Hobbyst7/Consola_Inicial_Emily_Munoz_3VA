@@ -1,17 +1,16 @@
 ﻿namespace MiPrimerApp.Consola
 {
-    class Nuevo
+    class Veterinario
     {
-        static void Main(string[] args)
-        public string cargo;
-        public string numeroPersonasCargo;
-        public string horario;
-        public string tiempoLabor;
-        public string capacitaciones;
-        public string sueldo;
-        public string cargasFamiliares;
-        public string vacaciones;
-        public string preparacionAcademica;
-        public string titulo;
+        public string numeroAnimales;
+        public string esterilizacion;
+        public string vacunas;
+        public string citaControl;
+        public string emergencias;
+        public string cirugias;
+        public string tratamientos;
+        public string jornadaGratuitas;
+        public string peluqueria;
+        public string publicidad;
     }
 }
