@@ -4,11 +4,11 @@ namespace MiPrimerApp.Consola
 {
     class Persona
     {
-        public static string libro1;
-        public static string estatura1;
-        public static string pesokg1;
-        public static bool genero1;
-        public static string edad1;
+        private static string libro1;
+        private static string estatura1;
+        private static string pesokg1;
+        private static bool genero1;
+        private static string edad1;
 
         static void SaludoInicial(String[] args)
         {
