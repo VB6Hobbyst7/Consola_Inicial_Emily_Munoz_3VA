@@ -8,6 +8,16 @@ namespace Entidades.Paises
 
         public string Nombre { get; set; }
 
-        public List<Provincia> Provincias { get; set; }
+        public List<Canton> Cantones { get; set; } = new List<Canton>();
+
+        public int ObtenerNumeroDeHabitantes()
+        {
+            int acumulador = 0;
+            foreach (Canton actual in Cantones)
+            {
+                acumulador += actual.ObtenerNumeroDeHabitantes();
+            }
+            return acumulador;
+        }
     }
 }

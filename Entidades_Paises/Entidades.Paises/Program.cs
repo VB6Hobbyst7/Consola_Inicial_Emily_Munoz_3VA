@@ -82,17 +82,17 @@ namespace Entidades.Paises
             pais.Habitantes = new List<Habitante>();
 
             var habitante1 = new Habitante
-            { Poblacion = "16645" };
+            { NumeroHabitantes = "16645" };
             var habitante2 = new Habitante
-            { Poblacion = "6675" };
+            { NumeroHabitantes = "6675" };
             var habitante3 = new Habitante
-            { Poblacion = "17028" };
+            { NumeroHabitantes = "17028" };
             var habitante4 = new Habitante
-            { Poblacion = "7586" };
+            { NumeroHabitantes = "7586" };
             var habitante5 = new Habitante
-            { Poblacion = "4988" };
+            { NumeroHabitantes = "4988" };
             var habitante6 = new Habitante
-            { Poblacion = "15403" };
+            { NumeroHabitantes = "15403" };
 
             pais.Habitantes.Add(habitante1);
             pais.Habitantes.Add(habitante2);
@@ -101,7 +101,7 @@ namespace Entidades.Paises
             pais.Habitantes.Add(habitante5);
             pais.Habitantes.Add(habitante6);
 
-            Console.WriteLine(pais.ObtenerNumeroHabitantes());
+            Console.WriteLine($" El resultado de los habitantes: {pais.ObtenerNumeroDeHabitantes()}");
         }
     }
 }

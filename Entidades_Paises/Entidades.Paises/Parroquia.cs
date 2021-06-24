@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Entidades.Paises
 {
@@ -8,6 +9,11 @@ namespace Entidades.Paises
 
         public string Nombre { get; set; }
 
-        public List<Parroquia> Parroquias { get; set; }
+        public List<Habitante> Habitantes { get; set; }
+
+        internal int ObtenerNumeroDeHabitantes()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

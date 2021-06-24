@@ -19,9 +19,15 @@ namespace Entidades.Paises
 
         public int[] Enteros { get; set; }
 
-        internal bool ObtenerNumeroHabitantes()
+        public int ObtenerNumeroDeHabitantes()
         {
-            throw new NotImplementedException();
+            int acumulador = 0;
+
+            foreach (Provincia actual in Provincias)
+            {
+                acumulador += actual.ObtenerNumeroDeHabitantes();
+            }
+            return acumulador;
         }
     }
 }
