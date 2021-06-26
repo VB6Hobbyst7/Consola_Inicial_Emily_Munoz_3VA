@@ -101,7 +101,8 @@ namespace Entidades.Paises
             pais.Habitantes.Add(habitante5);
             pais.Habitantes.Add(habitante6);
 
-            Console.WriteLine($" El resultado de los habitantes: {pais.ObtenerNumeroDeHabitantes()}");
+            Console.WriteLine($" El resultado de los habitantes es de: {pais.ObtenerNumeroDeHabitantes()} habitantes");
         }
     }
 }
+
