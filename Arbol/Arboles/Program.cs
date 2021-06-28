@@ -6,7 +6,7 @@ namespace Arboles
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hola\n");
+            Console.Write("Hola.\nMi Nombre es Emily Muñoz\n Curso: Tercero Vespertino A\n");
 
             Nodo raiz = new()
             {
@@ -20,12 +20,12 @@ namespace Arboles
                         {
                             new Nodo
                             {
-                                Valor = " 8"
+                                Valor = " 1"
                             },
                             new Nodo
                             {
-                                Valor = " 5"
-                            }
+                                Valor = " 2"
+                            },
                         }
                     },
                     new Nodo
@@ -35,12 +35,12 @@ namespace Arboles
                         {
                             new Nodo
                             {
-                                Valor = " 7"
+                                Valor = " 3"
                             },   
                             new Nodo
                             {
-                                Valor = " 4"
-                            }
+                                Valor = " 5"
+                            },                            
                         }
                     }
                 }
@@ -49,8 +49,16 @@ namespace Arboles
             ManejadorArbol manejadorArbol = new();
 
             Console.WriteLine(manejadorArbol.ImprimirArbolInfijo(raiz) + " => Notación Infija\n") ;
+            
             Console.WriteLine(manejadorArbol.ImprimirArbolPrefijo(raiz) + " => Notación Prefija\n");
+            
             Console.WriteLine(manejadorArbol.ImprimirArbolPostfijo(raiz) + " => Notación Postfija\n");
+
+            Console.WriteLine($"Número de total de hojas: {manejadorArbol.NumeroHojas(raiz)}\n");
+
+            Console.WriteLine($"Número de total de nodos: {manejadorArbol.NumeroNodos(raiz)}\n");
+
+            Console.WriteLine($"Número de total de niveles: {manejadorArbol.NumeroNiveles(raiz)}\n");
         }
     }
 }
