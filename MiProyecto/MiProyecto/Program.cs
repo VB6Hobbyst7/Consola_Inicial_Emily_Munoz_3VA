@@ -7,16 +7,17 @@ namespace MiProyecto
     {
         static void Main(string[] args)
         {
-            if (args is null)
+            MateriaPrima maquina = new()
             {
-                throw new ArgumentNullException(nameof(args));
-            }
+                MaquinaPrimaId = 1,
+                Nombre = "Bordadora"
+            };
 
             Persona persona = new()
-            {
-                PersonaId = 1,
-                Nombre = "Nombre"
-            };
+                {
+                    PersonaId = 1,
+                    Nombre = "Nombre"
+                };
 
             persona.Modistas = new List<Persona>();
 
@@ -33,6 +34,12 @@ namespace MiProyecto
             persona.Modistas.Add(apellido1);
             persona.Modistas.Add(cedula1);
             persona.Modistas.Add(edad1);
+
+            Console.WriteLine($"Nombre: {nombre1}\n");
+            Console.WriteLine($"Nombre: {apellido1}\n");
+            Console.WriteLine($"Nombre: {cedula1}\n");
+            Console.WriteLine($"Nombre: {edad1}\n");
+
         }
-    }
+    }           
 }
