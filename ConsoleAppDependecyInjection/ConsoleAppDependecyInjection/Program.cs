@@ -6,18 +6,16 @@ namespace ConsoleAppDependecyInjection
     {
         static void Main(string[] args)
         {
-            var impresora = new Impresora();
-
-            Libreria libreria = new Libreria(); //inyectando por propiedad
-            libreria.Impresora = impresora; //inyectando por constructor
+            Libreria libreria = new Libreria();
 
             var libro = new Libro { LibroId = 1, Titulo = "El varón domado", Autor = "Esther Vilar" };
-
             libreria.Libros.Add(libro);
 
-            libreria.Imprimir(libro.LibroId);
-
+            libreria.Impresora = new ImpresoraTxt(); //inyectando por propiedad
             Console.WriteLine(libreria.Imprimir(libro.LibroId));
+
+            libreria.Impresora = new ImpresoraXml(); //inyectando por propiedad
+            Console.WriteLine(libreria.Imprimir(libro.LibroId)); 
         }
     }
 }

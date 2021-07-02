@@ -1,29 +1,27 @@
 ﻿using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace ConsoleAppDependecyInjection
 {
-    class Libreria
+    internal class Libreria
     {
-        public string Ruta { get; set; } = "";
-        public Collection<Libro> Libros { get; set; } = new Collection<Libro>();
-
-        internal string Imprimir (int libroId)
+        public Libreria()
         {
-            if (Libros.Any(actual => actual.LibroId == libroId ))
-            {
-                var libro = Libros.Single(actual => actual.LibroId == libroId);
-                var archivo = $"{Ruta}\\{libro.Titulo.Replace(" ", string.Empty)}.txt";
-                FileStream fileStream = File.Create(archivo);
-                var contenido = $"Id: {libro.LibroId}\n Título: {libro.Titulo}\n Autor: {libro.Autor}\n ";
-                byte[] buffer = Encoding.UTF8.GetBytes(contenido);
-                fileStream.Write(buffer);
-                fileStream.Flush();
-                fileStream.Close();
-                return archivo;
-            }
+        }
+
+        public Libreria(Impresora impresora)
+        {
+            Impresora = impresora;
+        }
+        
+        public string Ruta { get; set; } = "C:\\Users\\user\\Desktop\\Programación_Visual\\ConsoleAppDependecyInjection\\Libro";
+        public Collection<Libro> Libros { get; set; } = new Collection<Libro>();
+        public Impresora Impresora { get; set; }
+        internal string Imprimir(int libroId)
+        {
+            var libro = Libros.SingleOrDefault(actual => actual.LibroId == libroId);
+            if (libro != null)
+                return Impresora.Imprimir(libro, Ruta);
             return "No existe el libro.";
         }
     }
