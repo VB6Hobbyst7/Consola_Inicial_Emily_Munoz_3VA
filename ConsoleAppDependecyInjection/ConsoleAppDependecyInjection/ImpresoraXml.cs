@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace ConsoleAppDependecyInjection
+namespace ConsoleAppDependencyInjection
 {
     class ImpresoraXml : Impresora
     {

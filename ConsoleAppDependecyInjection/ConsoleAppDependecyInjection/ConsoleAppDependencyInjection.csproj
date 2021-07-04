@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ImpresoraSunny\ImpresoraSunny.csproj" />
     <ProjectReference Include="..\Libreria\Abstraccion.csproj" />
   </ItemGroup>
 

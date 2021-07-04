@@ -1,7 +1,8 @@
 ﻿using Abstraccion;
+using ImpresoraSunny;
 using System;
 
-namespace ConsoleAppDependecyInjection
+namespace ConsoleAppDependencyInjection
 {
     class Program
     {
