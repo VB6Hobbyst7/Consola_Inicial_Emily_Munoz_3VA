@@ -1,6 +1,6 @@
-﻿namespace ConsoleAppDependecyInjection
+﻿namespace Abstraccion
 {
-    abstract class Impresora
+    public abstract class Impresora
     {
         public abstract string Imprimir(Libro libro, string ruta);
     }

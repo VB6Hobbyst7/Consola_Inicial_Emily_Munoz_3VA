@@ -1,6 +1,6 @@
-﻿namespace ConsoleAppDependecyInjection
+﻿namespace Abstraccion
 {
-    class Libro
+    public class Libro
     {
         public int LibroId { get; set; }
         public string Titulo { get; set; }

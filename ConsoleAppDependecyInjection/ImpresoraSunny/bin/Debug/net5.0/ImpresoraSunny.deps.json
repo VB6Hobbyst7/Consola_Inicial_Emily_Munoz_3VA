@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ImpresoraSunny/1.0.0": {
+        "dependencies": {
+          "Abstraccion": "1.0.0"
+        },
+        "runtime": {
+          "ImpresoraSunny.dll": {}
+        }
+      },
+      "Abstraccion/1.0.0": {
+        "runtime": {
+          "Abstraccion.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImpresoraSunny/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Abstraccion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

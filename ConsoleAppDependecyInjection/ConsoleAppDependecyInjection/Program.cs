@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Abstraccion;
+using System;
 
 namespace ConsoleAppDependecyInjection
 {
@@ -14,7 +15,7 @@ namespace ConsoleAppDependecyInjection
             libreria.Impresora = new ImpresoraTxt(); //inyectando por propiedad
             Console.WriteLine(libreria.Imprimir(libro.LibroId));
 
-            libreria.Impresora = new ImpresoraXml(); //inyectando por propiedad
+            libreria.Impresora = new ImpresoraXml1(); //inyectando por propiedad
             Console.WriteLine(libreria.Imprimir(libro.LibroId)); 
         }
     }

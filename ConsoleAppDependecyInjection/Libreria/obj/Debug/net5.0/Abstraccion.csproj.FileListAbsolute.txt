@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\bin\Debug\net5.0\Abstraccion.deps.json
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\bin\Debug\net5.0\Abstraccion.dll
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\bin\Debug\net5.0\ref\Abstraccion.dll
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\bin\Debug\net5.0\Abstraccion.pdb
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\obj\Debug\net5.0\Abstraccion.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\obj\Debug\net5.0\Abstraccion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\obj\Debug\net5.0\Abstraccion.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\obj\Debug\net5.0\Abstraccion.AssemblyInfo.cs
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\obj\Debug\net5.0\Abstraccion.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\obj\Debug\net5.0\Abstraccion.dll
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\obj\Debug\net5.0\ref\Abstraccion.dll
+C:\Users\user\Desktop\Programación_Visual\ConsoleAppDependecyInjection\Libreria\obj\Debug\net5.0\Abstraccion.pdb
