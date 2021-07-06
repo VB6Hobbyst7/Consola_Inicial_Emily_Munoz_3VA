@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{      
+    ViewData["Title"] = "Cálculos";
+}
+
+<div class="text-center">
+    <h1>Calculos</h1>
+    <form action="/calculos/sumar">
+        <div class=" form-group">
+            <input type="number" name="primer-numero" class="form-control" placeholder="Ingrese un número." />
+        </div>
+        <div class=" form-group">
+            <input type="number" name="segundo-numero" class="form-control" placeholder="Ingrese el segundo número." />
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" value="Calcular">Sumar</button>
+        </div>   
+    </form>
+</div>

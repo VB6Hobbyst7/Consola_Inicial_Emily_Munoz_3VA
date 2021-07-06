@@ -2,7 +2,7 @@
 
 namespace MiPrimerApp.Consola
 {
-    class Persona
+    internal class Persona
     {
         public string nombre;
         public string apellido;
@@ -14,19 +14,5 @@ namespace MiPrimerApp.Consola
         public string musicaFavorita;
         public string estatura;
         public string peso;
-    }
-
-    class Estudios
-    {
-        public string lugar;
-        public string carrera;
-        public string numeroSemestre;
-        public string semestre;
-        public string materia;
-        public string ingles;
-        public string jornada;
-        public string periodo;
-        public string matricula;
-        public string pagos;
     }
 }
