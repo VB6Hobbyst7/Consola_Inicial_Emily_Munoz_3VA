@@ -9,15 +9,38 @@ namespace WebApplicationOnline.Controllers
             return View();
         }
 
-        public IActionResult Sumar()
+        public IActionResult Sumar(int primerNumero, int segundoNumero)
         {
-            var primerNumero = int.Parse(Request.Form["primer-numero"]);
-            var segundoNumero = int.Parse(Request.Form["segundo-numero"]);
+            var resultadoSuma = primerNumero + segundoNumero;
 
-            var resultado = primerNumero + segundoNumero;
+            ViewData["ResultadoSuma"] = resultadoSuma;
 
-            ViewData["Resultado"] = resultado;
+            return View();
+        }
 
+        public IActionResult Restar(int primerNumero, int segundoNumero)
+        {
+            var resultadoResta = primerNumero - segundoNumero;
+
+            ViewData["ResultadoResta"] = resultadoResta;
+
+            return View();
+        }
+
+        public IActionResult Multiplicar(int primerNumero, int segundoNumero)
+        {
+            var resultadoMultiplicacion = primerNumero * segundoNumero;
+
+            ViewData["ResultadoMultiplicacion"] = resultadoMultiplicacion;
+
+            return View();
+        }
+
+        public IActionResult Dividir(int primerNumero, int segundoNumero)
+        {
+            var resultadoDividido = primerNumero / segundoNumero;
+
+            ViewData["ResultadoDivision"] = resultadoDividido;
             return View();
         }
     }

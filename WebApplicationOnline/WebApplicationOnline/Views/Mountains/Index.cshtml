@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplicationOnline.Entities.Mountain>
+@using WebApplicationOnline.Entities;
+
+@{
+    ViewBag["Title"] = "Lista de Montañas";
+}
+<h3>Lista de Montañas</h3>
+<hr />
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Altitud</th>
+            <th>Provincia</th>
+            <th>Clasificacion</th>
+            <th>Cordillera</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Mountain actual in Model)
+        {
+            <tr>
+                <td>
+                    @(actual.Nombre)
+                </td>
+                <td>
+                    @(actual.Altitud)
+                </td>
+                <td>
+                    @(actual.Provincia)
+                </td>
+                <td>
+                    @(actual.Clasificacion)
+                </td>
+                <td>
+                    @(actual.Cordillera)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
