@@ -15,7 +15,7 @@ namespace WebApplicationOnline.Entities
         [DisplayName("Provincia en la que se encuentra la montaña: ")]
         public string Provincia { get; set; }
 
-        [DisplayName("Que tipo de montaña es (Estratovolcán / caldera): ")]
+        [DisplayName("Que tipo de montaña es (Estratovolcán / Caldera): ")]
         public string Clasificacion { get; set; }
 
         [DisplayName("Cordillera de la montaña (Occidental / Oriental): ")]

@@ -42,13 +42,17 @@ namespace WebApplicationOnline.Controllers
         {
             _mainDbContext.Add(mountain);
             var affected = _mainDbContext.SaveChanges();
-            if (affected > 0) 
+
+            if (affected > 0)
+            {
                 return RedirectToAction(nameof(Index));
-
-            ViewData["Mensaje"] = "No se grabó. Inténtelo de nuevo.";
+            }
+            else
+            {
+                ViewData["Mensaje"] = "No se grabó. Inténtelo de nuevo.";
                 return View("Error");
+            }
         }
-
         // GET: MountainsController/Edit/5
         public ActionResult Edit(int id)
         {
