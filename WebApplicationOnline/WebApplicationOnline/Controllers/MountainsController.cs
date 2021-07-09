@@ -12,15 +12,14 @@ namespace WebApplicationOnline.Controllers
         readonly MainDbContext _mainDbContext;
 
         public MountainsController(MainDbContext mainDbContext)
-        {
+        { 
             _mainDbContext = mainDbContext;
         }
 
         // GET: MountainsController
         public ActionResult Index()
         {
-            List<Mountain> mountains = new() { new Mountain { Nombre = "Guagua Pichincha", Altitud = 4776, Provincia = "Pichincha", Clasificacion = "Estratovolcán - Caldera", Cordillera = "Occidental" } };
-            //return View(_mainDbContext.Mountains.ToList());
+            List<Mountain> mountains = _mainDbContext.Mountains.ToList();
             return View(mountains);
         }
 
@@ -39,16 +38,15 @@ namespace WebApplicationOnline.Controllers
         // POST: MountainsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Mountain mountain)
         {
-            try
-            {
+            _mainDbContext.Add(mountain);
+            var affected = _mainDbContext.SaveChanges();
+            if (affected > 0) 
                 return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+
+            ViewData["Mensaje"] = "No se grabó. Inténtelo de nuevo.";
+                return View("Error");
         }
 
         // GET: MountainsController/Edit/5
