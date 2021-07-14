@@ -21,5 +21,6 @@ namespace WebApplicationTest.Entities
         public Departamento Departamento { get; set; }
         public Conyuge Conyuge { get; set; }
         public List<Hijo> Hijos { get; set; }
+        public List<Curso> Cursos { get; set; }
     }
 }

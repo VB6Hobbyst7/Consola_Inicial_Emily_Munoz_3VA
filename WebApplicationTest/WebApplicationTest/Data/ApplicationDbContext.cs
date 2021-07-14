@@ -15,5 +15,6 @@ namespace WebApplicationTest.Data
         public DbSet<Conyuge> Conyuges { get; set; }
         public DbSet<Departamento> Departamentos { get; set; }
         public DbSet<Hijo> Hijos { get; set; }
+        public DbSet <Curso> Cursos { get; set; }
     }
 }
