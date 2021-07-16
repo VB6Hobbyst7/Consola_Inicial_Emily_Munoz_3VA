@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplicationTest.Data;
 using WebApplicationTest.Entities;
 
 namespace WebApplicationTest.Controllers
 {
+    [Authorize]
     public class HijosController : Controller
     {
         private readonly ApplicationDbContext _context;

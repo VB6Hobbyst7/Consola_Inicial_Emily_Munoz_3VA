@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplicationTest.Data;
 using WebApplicationTest.Entities;
@@ -16,32 +19,13 @@ namespace WebApplicationTest.Controllers
             _context = context;
         }
 
-        // GET: Departamentos
-        public IActionResult Index()
+        // GET: Departamentoes
+        public async Task<IActionResult> Index()
         {
-            var departamentos = _context.Departamentos.Include(x => x.Empleados).ToList();
-            var totalDelPrimerDepartamentos = departamentos[0].Empleados.Count();
-
-            var departamentosOtro = _context
-                .Departamentos
-                .Include(x => x.Empleados)
-                .Where(x => x.Nombre == "Tecnología" && x.DepartamentoId > 1)
-                .Select(x => new { Id = x.DepartamentoId, Name = x.Nombre, TotalEmpleados = 0 })
-                .ToList();
-
-            var id = departamentosOtro[0].Id;
-            var name = departamentosOtro[0].Name;
-            var total = departamentosOtro[0].TotalEmpleados;
-
-            return View();
+            return View(await _context.Departamentos.ToListAsync());
         }
 
-        private void ToList()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        // GET: Departamentos/Details/5
+        // GET: Departamentoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -59,13 +43,13 @@ namespace WebApplicationTest.Controllers
             return View(departamento);
         }
 
-        // GET: Departamentos/Create
+        // GET: Departamentoes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Departamentos/Create
+        // POST: Departamentoes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -81,7 +65,7 @@ namespace WebApplicationTest.Controllers
             return View(departamento);
         }
 
-        // GET: Departamentos/Edit/5
+        // GET: Departamentoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -97,7 +81,7 @@ namespace WebApplicationTest.Controllers
             return View(departamento);
         }
 
-        // POST: Departamentos/Edit/5
+        // POST: Departamentoes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -132,7 +116,7 @@ namespace WebApplicationTest.Controllers
             return View(departamento);
         }
 
-        // GET: Departamentos/Delete/5
+        // GET: Departamentoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -150,7 +134,7 @@ namespace WebApplicationTest.Controllers
             return View(departamento);
         }
 
-        // POST: Departamentos/Delete/5
+        // POST: Departamentoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

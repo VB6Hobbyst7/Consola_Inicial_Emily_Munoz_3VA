@@ -15,6 +15,7 @@ namespace WebApplicationTest.Models
         public DateTime Nacimiento { get; set; }
         public double Edad { get; set; }
         public int Creditos { get; internal set; }
+
         public static EmpleadoSimple Convertir(Empleado empleado)
         {
             return new EmpleadoSimple

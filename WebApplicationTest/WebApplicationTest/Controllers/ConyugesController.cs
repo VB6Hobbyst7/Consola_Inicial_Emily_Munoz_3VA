@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using WebApplicationTest.Entities;
 
 namespace WebApplicationTest.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class ConyugesController : Controller
     {
         private readonly ApplicationDbContext _context;

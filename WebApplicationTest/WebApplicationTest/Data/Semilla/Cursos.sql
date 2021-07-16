@@ -1,7 +1,7 @@
 ﻿--opción 1
---insert into Cursos(Nombre, NumeroCreditos) values ('POO', 80);
---insert into Cursos(Nombre, NumeroCreditos) values ('ASP.NET Core 5.0', 110);
---insert into Cursos(Nombre, NumeroCreditos) values ('Angular', 90);
+insert into Cursos(Nombre, NumeroCreditos) values ('POO', 80);
+insert into Cursos(Nombre, NumeroCreditos) values ('ASP.NET Core 5.0', 110);
+insert into Cursos(Nombre, NumeroCreditos) values ('Angular', 90);
 
 --opción 2
 SET IDENTITY_INSERT Cursos ON

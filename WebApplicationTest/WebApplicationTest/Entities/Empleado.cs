@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using WebApplicationTest.Models;
 
 namespace WebApplicationTest.Entities
 {
@@ -22,5 +24,20 @@ namespace WebApplicationTest.Entities
         public Conyuge Conyuge { get; set; }
         public List<Hijo> Hijos { get; set; }
         public List<Curso> Cursos { get; set; }
+
+        public EmpleadoSimple ConvertirEnEmpleadoSimple()
+        {
+            return new EmpleadoSimple
+            {
+                EmpleadoId = EmpleadoId,
+                Apellido = Apellido,
+                Nombre = Nombre,
+                Edad = Edad,
+                Nacimiento = Nacimiento,
+                NombreCompleto = NombreCompleto,
+                Salario = Salario,
+                Creditos = Cursos == null ? 0 : Cursos.Sum(x => x.NumeroCreditos)
+            };
+        }
     }
 }
