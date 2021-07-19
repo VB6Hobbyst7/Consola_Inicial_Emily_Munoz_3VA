@@ -19,7 +19,10 @@ namespace WebApplicationTest.Entities
 
         [NotMapped]
         public double Edad { get { return DateTime.Now.Subtract(Nacimiento).TotalDays / 365; } }
-        
+
+        [ForeignKey("Departamento")]
+        public int DepartamentoId { get; set; }
+
         public Departamento Departamento { get; set; }
         public Conyuge Conyuge { get; set; }
         public List<Hijo> Hijos { get; set; }

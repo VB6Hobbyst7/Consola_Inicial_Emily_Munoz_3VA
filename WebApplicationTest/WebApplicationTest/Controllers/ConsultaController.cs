@@ -34,40 +34,65 @@ namespace WebApplicationTest.Controllers
             return empleados.Select(
                 e => e.ConvertirEnEmpleadoSimple());
         }
-    }
 
-    public Empleado[] Data()
-    {
-        var resultado = from x in _context.Empleados
-                      where x.Apellido == "Muñoz"
-                      select x;
-        return resultado.ToArray();
+        public Empleado[] Data()
+        {
+            var resultado = from x in _context.Empleados
+                            where x.Apellido == "Muñoz"
+                            select x;
+            return resultado.ToArray();
 
+            //var resultado1 = _context.Empleados.Where(x => x.Apellido == "Muñoz");
+            //return resultado1.ToList();
+        }
 
-        //var resultado1 = _context.Empleados.Where(x => x.Apellido == "Muñoz");
-        //return resultado1.ToList();
-    }
+        public object Ejemplo1()
+        {
+            var consulta = from e in _context.Empleados
+                           from h in _context.Hijos
+                           where e.EmpleadoId == h.EmpleadoId
+                           select e;
+            return consulta.ToList();
 
-    public object Ejemplo1()
-    {
-        var consulta = from e in _context.Empleados
-                       from h in _context.Hijos
-                       where e.EmpledoId == h.EmpleadoId
-                       select e;
-        return consulta.ToList();
+            var consulta0 = from e in _context.Empleados
+                            join h in _context.Hijos
+                            on e.EmpleadoId equals h.EmpleadoId
+                            select new { e.Apellido, NumeroHijos = e.Hijos.Count };
 
-        var consulta0 = from e in _context.Empleados
-                        join h in _context,Hijos
-                        on e,EmpleadoId == h.EmpledoId
+            var consulta1 = from e in _context.Empleados
+                            from h in _context.Hijos
+                            where e.EmpleadoId == h.EmpleadoId
+                            select new { e.Apellido, NumeroHijos = e.Hijos.Count };
+            return consulta1.ToArray();
 
-        var consulta1 = from e in _context.Empleados
-                       from h in _context.Hijos
-                       where e.EmpleadoId == h.EmpleadoId
-                       select new { e.Apellido, NumeroHijos = e.Hijos.Count };
-        return consulta1.ToArray();
+            var consulta2 = _context.Empleados
+                            .Include(e => e.Hijos)
+                            .Select(e => new { e.Apellido, NumeroHijos = e.Hijos.Count });
+        }
 
-        var consulta2 = _context.Empleados
-            .Include(e = e.Hijos)
-            .Select(e = new { e.Apellido, NumeroHijos = e.Hijos.Count });
+        public Empleado Crear([Bind("EmpleadoId, Salario, Nombre, Apellido, DepartamentoId")] Empleado empleado)
+        {
+            _context.Add(empleado);
+            _context.SaveChanges();
+
+            //LazyLoad
+            //LangerLoader
+            //ExplicityLoad
+            _context.Entry(empleado).Collection(e => e.Hijos).Load();
+            _context.Entry(empleado).Reference(e => e.Departamento).Load();
+
+            return empleado;
+        }
+
+        public void Samples()
+        {
+            using (var otroContexto = new ApplicationDbContext(null))
+            {
+                if (otroContexto.Cursos.Any(c => c.NumeroCreditos > 100))
+                {
+
+                }
+            }
+        }
     }
 }

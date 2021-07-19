@@ -1,4 +1,6 @@
-﻿namespace WebApplicationTest.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace WebApplicationTest.Entities
 {
     public class Hijo
     {
@@ -6,7 +8,7 @@
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
-        [ForeingKey]
+        [ForeignKey("Empleado")]
         public int EmpleadoId { get; set; }
         public Empleado Empleado { get; set; }
     }
