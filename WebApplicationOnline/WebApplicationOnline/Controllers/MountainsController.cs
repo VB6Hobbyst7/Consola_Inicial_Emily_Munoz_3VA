@@ -38,21 +38,18 @@ namespace WebApplicationOnline.Controllers
         // POST: MountainsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //recibe una solicitud del cliente
         public ActionResult Create(Mountain mountain)
         {
             _mainDbContext.Add(mountain);
             var affected = _mainDbContext.SaveChanges();
-
             if (affected > 0)
-            {
                 return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                ViewData["Mensaje"] = "No se grabó. Inténtelo de nuevo.";
-                return View("Error");
-            }
+
+            ViewData["Mensaje"] = "No se grabo";
+            return View("Error");
         }
+
         // GET: MountainsController/Edit/5
         public ActionResult Edit(int id)
         {

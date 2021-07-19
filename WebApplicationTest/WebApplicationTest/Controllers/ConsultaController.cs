@@ -58,6 +58,7 @@ namespace WebApplicationTest.Controllers
                             join h in _context.Hijos
                             on e.EmpleadoId equals h.EmpleadoId
                             select new { e.Apellido, NumeroHijos = e.Hijos.Count };
+            return consulta0.ToArray();
 
             var consulta1 = from e in _context.Empleados
                             from h in _context.Hijos
