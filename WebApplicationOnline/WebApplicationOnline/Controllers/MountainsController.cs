@@ -42,7 +42,7 @@ namespace WebApplicationOnline.Controllers
         public ActionResult Create(Mountain mountain)
         {
             _mainDbContext.Add(mountain);
-            var affected = _mainDbContext.SaveChanges();
+            var affected = _mainDbContext.SaveChanges ();
             if (affected > 0)
                 return RedirectToAction(nameof(Index));
 
