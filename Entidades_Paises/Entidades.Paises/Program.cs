@@ -13,8 +13,7 @@ namespace Entidades.Paises
                 Nombre = "Ecuador"
             };
 
-            pais.Provincias = new List<Provincia>();
-
+            // ------ PROVINCIA ------
             var provincia1 = new Provincia
             { Nombre = "Pichincha" };
             var provincia2 = new Provincia
@@ -28,15 +27,16 @@ namespace Entidades.Paises
             var provincia6 = new Provincia
             { Nombre = "Esmeraldas" };
 
-            pais.Provincias.Add(provincia1);
-            pais.Provincias.Add(provincia2);
-            pais.Provincias.Add(provincia3);
-            pais.Provincias.Add(provincia4);
-            pais.Provincias.Add(provincia5);
-            pais.Provincias.Add(provincia6);
+            pais.Provincias = new List<Provincia>() {
+                provincia1,
+                provincia2,
+                provincia3,
+                provincia4,
+                provincia5,
+                provincia6
+            };
 
-            pais.Cantones = new List<Canton>();
-
+            // ------ CANTONES ------
             var canton1 = new Canton
             { Nombre = "Quito" };
             var canton2 = new Canton
@@ -50,15 +50,32 @@ namespace Entidades.Paises
             var canton6 = new Canton
             { Nombre = "Esmeraldas" };
 
-            pais.Cantones.Add(canton1);
-            pais.Cantones.Add(canton2);
-            pais.Cantones.Add(canton3);
-            pais.Cantones.Add(canton4);
-            pais.Cantones.Add(canton5);
-            pais.Cantones.Add(canton6);
+            provincia1.Cantones = new List<Canton>() 
+            { 
+                canton1 
+            };
+            provincia2.Cantones = new List<Canton>() 
+            {
+                canton2
+            };
+            provincia3.Cantones = new List<Canton>() 
+            {
+                canton3
+            };
+            provincia4.Cantones = new List<Canton>() 
+            {
+                canton4
+            };
+            provincia5.Cantones = new List<Canton>() 
+            {
+                canton5
+            };
+            provincia6.Cantones = new List<Canton>() 
+            {
+                canton6
+            };
 
-            pais.Parroquias = new List<Parroquia>();
-
+            // ------ PARROQUIAS ------
             var parroquia1 = new Parroquia
             { Nombre = "Pifo" };
             var parroquia2 = new Parroquia
@@ -72,37 +89,39 @@ namespace Entidades.Paises
             var parroquia6 = new Parroquia
             { Nombre = "5 de Agosto" };
 
-            pais.Parroquias.Add(parroquia1);
-            pais.Parroquias.Add(parroquia2);
-            pais.Parroquias.Add(parroquia3);
-            pais.Parroquias.Add(parroquia4);
-            pais.Parroquias.Add(parroquia5);
-            pais.Parroquias.Add(parroquia6);
+            parroquia1.Habitantes = 18580;
+            parroquia2.Habitantes = 6672;
+            parroquia3.Habitantes = 12281;
+            parroquia4.Habitantes = 14687;
+            parroquia5.Habitantes = 4988;
+            parroquia6.Habitantes = 154035;
 
-            pais.Habitantes = new List<Habitante>();
+            canton1.Parroquias = new List<Parroquia>()
+            {
+                parroquia1
+            };
+            canton2.Parroquias = new List<Parroquia>()
+            {
+                parroquia2
+            };
+            canton3.Parroquias = new List<Parroquia>()
+            {
+                parroquia3
+            };
+            canton4.Parroquias = new List<Parroquia>()
+            {
+                parroquia4
+            };
+            canton5.Parroquias = new List<Parroquia>()
+            {
+                parroquia5
+            };
+            canton6.Parroquias = new List<Parroquia>()
+            {
+                parroquia6
+            };
 
-            var habitante1 = new Habitante
-            { NumeroHabitantes = "16645" };
-            var habitante2 = new Habitante
-            { NumeroHabitantes = "6675" };
-            var habitante3 = new Habitante
-            { NumeroHabitantes = "17028" };
-            var habitante4 = new Habitante
-            { NumeroHabitantes = "7586" };
-            var habitante5 = new Habitante
-            { NumeroHabitantes = "4988" };
-            var habitante6 = new Habitante
-            { NumeroHabitantes = "15403" };
-
-            pais.Habitantes.Add(habitante1);
-            pais.Habitantes.Add(habitante2);
-            pais.Habitantes.Add(habitante3);
-            pais.Habitantes.Add(habitante4);
-            pais.Habitantes.Add(habitante5);
-            pais.Habitantes.Add(habitante6);
-
-            Console.WriteLine($" El resultado de los habitantes es de: {pais.ObtenerNumeroDeHabitantes()} habitantes");
+            Console.WriteLine($"El resultado de los habitantes que hay en las 6 parroquias son: {pais.ObtenerNumeroDeHabitantes()} habitantes");
         }
     }
 }
-

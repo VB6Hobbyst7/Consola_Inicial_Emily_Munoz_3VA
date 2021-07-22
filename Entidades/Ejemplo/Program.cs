@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Entidades;
 
 namespace Vista
@@ -28,7 +27,6 @@ namespace Vista
             {
                 Nombre = "Diseño de Interfaces"
             };
-
         }
     }
 }
