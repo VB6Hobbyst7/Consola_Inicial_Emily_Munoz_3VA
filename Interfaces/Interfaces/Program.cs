@@ -7,11 +7,38 @@ namespace Interfaces
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string cabecera = "<?xml version=\" 1.0\" encoding=\" UTF - 8\" standalone= \" yes\"?>";
+            FileStream file;
+            try
+            {
+                file = File.Create("c:\\Users\\user\\Desktop\\Programación_Visual\\Interfaces\\Caballeros Del Zodiaco\\CaballerosDelZodiaco.xml");
+                Console.WriteLine("El programa se ha creado.");
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                System.Diagnostics.Trace.TraceError(e.Message);
+                Console.WriteLine("El programa no puede escribir en la ruta.");
+                //#if debug
+                Console.WriteLine(e);
+                //#endif
+                return;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Trace.TraceError(e.Message);
+                Console.WriteLine("Se produjo un problema.");
+                return;
+            }
 
-            string cabecera= "<?xml version=\" 1.0\" encoding=\" UTF - 8\" standalone= \" yes\"?>
-            FileStream file = File.Create("c:\\CaballerosDelZodiaco.xml"); 
-        } 
+            //file.Write(Byte[]);
+
+            Heroe heroe = new Heroe();
+            heroe.Name = "Saint Seiya de Pegaso";
+            heroe.Poder = 100000;
+            Villano villano = new Villano();
+            villano.Name = "Shaina de Ofiuco";
+            villano.Poder = 100000;
+        }
     }
 
     interface IToXml
@@ -20,19 +47,35 @@ namespace Interfaces
     }
 
     public class Heroe : IToXml
-
     {
         public string Name { get; set; }
         public int Poder { get; set; }
         public Caracter Caracter { get; set; }
         public Fase Fase { get; set; }
-        public Heroe Amigo { get; set; }
         public Villano Enemigo { get; set; }
         public Ubicacion Ubicacion { get; set; }
-        public string ToXml() 
+        public string ToXml()
         {
-            return $"<heroe><name>{Name}</name><poder>{Poder}</poder><caracter>{Caracter}</caracter>" +
-                $"{Enemigo.ToXml()}</heroe>";
+            return $"<heroe><name>{Name}</name><poder>{Poder}</poder><caracter>{Caracter}</caracter><fase>{Fase}</fase>" +
+                $"<enemigo>{Enemigo.ToXml()}</enemigo></heroe>";
+        }
+    }
+
+    public class Fase : IToXml
+    {
+        public string Name { get; set; }
+        public string ToXml()
+        {
+            return $"<fase><name>{Name}</name></fase>";
+        }
+    }
+
+    public class Caracter : IToXml
+    {
+        public string Name { get; set; }
+        public string ToXml()
+        {
+            return $"<caracter><name>{Name}</name></caracter>";
         }
     }
 
@@ -49,41 +92,14 @@ namespace Interfaces
         }
     }
 
-    public enum Caracter
-    {
-        Jovial,
-        Enojado,
-        Violento,
-        Tranquilo
-    }
-
     public class Villano : IToXml
     {
         public string Name { get; set; }
         public int Poder { get; set; }
 
-        internal string ToXml()
-        {
-            throw new NotImplementedException();
-        }
-
-        string IToXml.ToXml()
+        public string ToXml()
         {
             return $"<villano><name>{Name}</name><poder>{Poder}</poder></villano>";
         }
     }
-
-    public class Fase
-    {
-        public string Name { get; set; }
-    }
-
-
-    //Heroe heroe = new Heroe();
-    //heroe.Name = "";
-    //heroe.Poder = "";
-
-    //Villano villano = new Villano();
-    //villano.Name = "";
-    //villano.Poder = "";
 }
