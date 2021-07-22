@@ -1,4 +1,4 @@
-﻿//using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using WebApplicationTest.Models;
 
 namespace WebApplicationTest.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class ConsultasController : Controller
     {
         readonly ApplicationDbContext _context;
