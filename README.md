@@ -50,7 +50,7 @@ Ejemplo relacional de 5 clases.
 ****10. Web Application Online:****  
 Dentro de este ejemplo hay 2 ejercicios ****MVC con base de datos**** los cuales son:  
 ****-Cálculos:**** La realizacion de ejercicios básicos con base de datos.  
-****-Montañas:**** Utilización de base de datos para ver el funcionamiento de MVC (modelo , vista, controlador).  
+****-Montañas:**** Utilización de base de datos para ver el funcionamiento de MVC (modelo, vista, controlador).  
 *Fecha: 05/07/2021  -  06/07/2021*  
 
 
