@@ -1,7 +1,7 @@
 # Progrmación_Visual_Emily_Munoz_3VA
 La creación de mi primera App.Consola con C# con diferentes ejemplos para ser aplicados en la misma.
 
-****1. Árbol:****  
+****1. Árbol (Tarea 2):****  
 La creación de un arbol binario conformado principalmente de nodos los cuales pueden ser raiz, ramas y hojas.  
 Los Árboles se caracterizan por almacenar datos en sus nodos en forma jerárquica y no en forma lineal.  
 *Fecha: 23/07/2021*  
@@ -42,7 +42,7 @@ Creacion de un archivo xml con un anime que talvez es conocido por todos.
 *Fecha: 28/06/2021  -  29/07/2021*   
 
 
-****9. Mi Primer App:****  
+****9. Mi Primer App (Tarea 1):****  
 Ejemplo relacional de 5 clases.  
 *Fecha: 18/06/2021*  
 
