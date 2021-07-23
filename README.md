@@ -1,4 +1,4 @@
-# Consola_Inicial_Emily_Munoz_3VA_Progrmación_Visual
+# Progrmación_Visual_Emily_Munoz_3VA
 La creación de mi primera App.Consola con C# con diferentes ejemplos para ser aplicados en la misma.
 
 ****1. Árbol:****  
