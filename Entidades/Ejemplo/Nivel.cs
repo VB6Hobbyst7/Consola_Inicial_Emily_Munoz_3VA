@@ -6,8 +6,6 @@ namespace Entidades
     {
         public int NivelId { get; set; }
         public string Nombre { get; set; }
-
         public List<Asignatura> Asignatura { get; set; }
     }
-
 }   

@@ -18,7 +18,7 @@
             return $"Hola me llamo {Nombre}, espero te encuentres bien";
         }
 
-        public string Saludar(string nombreAmigo) 
+        public static string Saludar(string nombreAmigo) 
         {
             return $"Que más ve {nombreAmigo}, que te cuentas";
         }

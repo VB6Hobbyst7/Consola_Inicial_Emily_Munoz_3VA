@@ -9,7 +9,7 @@ namespace Vista
         {
             Console.WriteLine("Hola Mundo!");
 
-            Profesor persona = new Profesor
+            var persona = new Profesor("Alanis", "Morison")
             {
                 Nombre = "Alanis",
                 Apellido = "Morison",
@@ -18,7 +18,7 @@ namespace Vista
 
             Console.WriteLine(persona.Saludar());
 
-            Asignatura asignaturas = new Asignatura
+            Asignatura asignatura = new Asignatura
             {
                 Nombre = "Programación Visual"
             };
